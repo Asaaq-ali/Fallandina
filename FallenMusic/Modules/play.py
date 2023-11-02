@@ -60,13 +60,13 @@ from FallenMusic.Helpers.thumbnails import gen_qthumb, gen_thumb
 
 
 @app.on_message(
-    filters.command(["play", "vplay", "p"])
+    filters.command(["/play", "/vplay", "شغل","تشغيل"],"")
     & filters.group
     & ~filters.forwarded
     & ~filters.via_bot
 )
 async def play(_, message: Message):
-    fallen = await message.reply_text("» ᴘʀᴏᴄᴇssɪɴɢ, ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...")
+    fallen = await message.reply_text("**✧ أنتــظر جاري التـشـغيل ...**")
     try:
         await message.delete()
     except:
@@ -77,21 +77,21 @@ async def play(_, message: Message):
             get = await app.get_chat_member(message.chat.id, ASS_ID)
         except ChatAdminRequired:
             return await fallen.edit_text(
-                f"» ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴs ᴛᴏ ɪɴᴠɪᴛᴇ ᴜsᴇʀs ᴠɪᴀ ʟɪɴᴋ ғᴏʀ ɪɴᴠɪᴛɪɴɢ {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}."
+                f"✧**ارفع لي صلاحية دعوة المستخدمين  {BOT_NAME}** لأضافة الحساب المساعد ** {message.chat.title}."
             )
         if get.status == ChatMemberStatus.BANNED:
             unban_butt = InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text=f"ᴜɴʙᴀɴ {ASS_NAME}",
+                            text=f"الغاء حظر {ASS_NAME}",
                             callback_data=f"unban_assistant {message.chat.id}|{ASS_ID}",
                         ),
                     ]
                 ]
             )
             return await fallen.edit_text(
-                text=f"» {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ {message.chat.title}\n\n𖢵 ɪᴅ : `{ASS_ID}`\n𖢵 ɴᴀᴍᴇ : {ASS_MENTION}\n𖢵 ᴜsᴇʀɴᴀᴍᴇ : @{ASS_USERNAME}\n\nᴘʟᴇᴀsᴇ ᴜɴʙᴀɴ ᴛʜᴇ ᴀssɪsᴛᴀɴᴛ ᴀɴᴅ ᴘʟᴀʏ ᴀɢᴀɪɴ...",
+                text=f"» {BOT_NAME}**الحساب المساعد محظور ** {message.chat.title}\n\n✧** ايــده ** : `{ASS_ID}`\n ✧ **معرفه** : {ASS_MENTION}\n✧ **معرفه ** : @{ASS_USERNAME}\n\n✧ **الغي حظر الحساب المساعد للتشغيل....**",
                 reply_markup=unban_butt,
             )
     except UserNotParticipant:
