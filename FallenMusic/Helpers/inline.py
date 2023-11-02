@@ -62,7 +62,7 @@ pm_buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="☁️ 𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂 ☁️", url="https://t.me/Mlze1bot"
+            text="", url="https://t.me/Mlze1bot"
         ),
         InlineKeyboardButton(text="🥀 االمطور 🥀", user_id=config.OWNER_ID),
     ],
@@ -97,12 +97,12 @@ helpmenu = [
         )
     ],
     [
-        InlineKeyboardButton(text="sᴜᴅᴏ", callback_data="fallen_cb sudo"),
-        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", callback_data="fallen_cb owner"),
+        InlineKeyboardButton(text="أوامر المطور", callback_data="fallen_cb sudo"),
+        InlineKeyboardButton(text="أوامر المالك", callback_data="fallen_cb owner"),
     ],
     [
-        InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="fallen_home"),
-        InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="close"),
+        InlineKeyboardButton(text="عودة ", callback_data="fallen_home"),
+        InlineKeyboardButton(text="اغلاق", callback_data="close"),
     ],
 ]
 
