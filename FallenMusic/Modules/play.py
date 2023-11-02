@@ -124,7 +124,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"» sᴏʀʀʏ ʙᴀʙʏ, ᴛʀᴀᴄᴋ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ ᴏɴ {BOT_NAME}."
+                f"✧ ** المقطع طويل جدا **  {DURATION_LIMIT} ✧**جرب تشغيل مقطع أخر ** {BOT_NAME}."
             )
 
         file_name = get_file_name(audio)
@@ -149,12 +149,12 @@ async def play(_, message: Message):
                 secmul *= 60
 
         except Exception as e:
-            return await fallen.edit_text(f"sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ\n\n**ᴇʀʀᴏʀ :** `{e}`")
+            return await fallen.edit_text(f"✧ ** خطاء **: \n\n**االسبب:** `{e}`")
 
         if (dur / 60) > DURATION_LIMIT:
             return await fallen.edit_text(
-                f"» sᴏʀʀʏ ʙᴀʙʏ, ᴛʀᴀᴄᴋ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ ᴏɴ {BOT_NAME}."
-            )
+                f"✧ ** المقطع طويل جدا **  {DURATION_LIMIT} ✧**جرب تشغيل مقطع أخر ** {BOT_NAME}."
+          )
         file_path = audio_dl(url)
     else:
         if len(message.command) < 2:
