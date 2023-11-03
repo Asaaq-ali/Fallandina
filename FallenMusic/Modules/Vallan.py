@@ -1,7 +1,7 @@
 import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from FallenMusic import app, Telegram
+from FallenMusic import app
 import random
 
 @app.on_message(
